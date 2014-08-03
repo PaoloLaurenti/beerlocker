@@ -7,4 +7,4 @@ Launch "npm install" inside the root directory, to install all the application d
 
 Launch "nodemon server.js" in order to start the application.
 
-
+(This application has been built following the turorial at this link: http://scottksmith.com/blog/2014/05/02/building-restful-apis-with-node)
