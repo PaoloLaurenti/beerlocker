@@ -6,7 +6,6 @@ exports.postBeers = function (req, res) {
     db.User
         .find({ where: { id: req.user.id } })
         .then(function (user) {
-            //console.log(user);
             db.Beer.create({
                 name: req.body.name,
                 type: req.body.type,
