@@ -12,6 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         instanceMethods: {
             verifyPassword: function (candidatePassword, cb) {
+                console.log('candidte: ' + candidatePassword + '  - password: ' + this.getDataValue('password'));
                 bcrypt.compare(candidatePassword, this.getDataValue('password'), function (err, isMatch) {
                     if (err)
                         return cb(err);

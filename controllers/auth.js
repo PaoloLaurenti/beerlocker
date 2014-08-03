@@ -6,8 +6,9 @@ var db = require('../models');
 passport.use(new BasicStrategy(
     function (username, password, callback) {
         db.User
-            .find({ username: username })
+            .find({ where: { username: username }})
             .then(function (user) {
+                //console.log(user);
                 // No user found with that username
                 if (!user) {
                     return callback(null, false);
