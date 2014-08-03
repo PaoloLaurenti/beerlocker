@@ -15,13 +15,9 @@ exports.postUsers = function (req, res) {
 exports.getUsers = function (req, res) {
     db.User
         .findAll()
-        .success(function () {
-            res.json(users);
-        })
-        .error(function (err, users) {
-            if (err)
-                res.send(err);
-
-            res.json(users);
+        .then(function (users) {
+            res.send(users);
+        }, function (error) {
+            res.send(error);
         });
 };
